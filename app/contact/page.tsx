@@ -101,7 +101,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-bold">Call Us</h3>
                     <p className="text-muted-foreground">
-                      +1 (555) 123-4567
+                      +25471234567
                       <br />
                       Mon-Fri, 9am-6pm PST
                     </p>
