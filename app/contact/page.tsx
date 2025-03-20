@@ -179,7 +179,7 @@ export default function ContactPage() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      placeholder="+1 (555) 123-4567"
+                      placeholder="+24571234567"
                     />
                   </div>
                   <div className="space-y-2">
@@ -261,7 +261,7 @@ export default function ContactPage() {
             <div className="aspect-[16/9] w-full overflow-hidden rounded-lg bg-muted">
               {/* Replace with actual map component or iframe */}
               <div className="h-full w-full flex items-center justify-center">
-                <p className="text-muted-foreground">Map placeholder - Embed Google Maps or similar service here</p>
+                <p className="text-muted-foreground">#TODO: Map placeholder - Embed Google Maps or similar service here (Mapbox or google maps)</p>
               </div>
             </div>
           </div>
