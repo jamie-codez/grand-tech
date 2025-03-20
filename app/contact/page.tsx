@@ -77,11 +77,11 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-bold">Our Office</h3>
                     <p className="text-muted-foreground">
-                      123 Tech Street, Suite 456
+                      123 Street, Suite 456
                       <br />
-                      San Francisco, CA 94103
+                      Nairobi, KE 94103
                       <br />
-                      United States
+                      Kenya
                     </p>
                   </div>
                 </div>
@@ -101,7 +101,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-bold">Call Us</h3>
                     <p className="text-muted-foreground">
-                      +1 (555) 123-4567
+                      +25471234567
                       <br />
                       Mon-Fri, 9am-6pm PST
                     </p>
@@ -179,7 +179,7 @@ export default function ContactPage() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      placeholder="+1 (555) 123-4567"
+                      placeholder="+24571234567"
                     />
                   </div>
                   <div className="space-y-2">
@@ -261,7 +261,7 @@ export default function ContactPage() {
             <div className="aspect-[16/9] w-full overflow-hidden rounded-lg bg-muted">
               {/* Replace with actual map component or iframe */}
               <div className="h-full w-full flex items-center justify-center">
-                <p className="text-muted-foreground">Map placeholder - Embed Google Maps or similar service here</p>
+                <p className="text-muted-foreground">#TODO: Map placeholder - Embed Google Maps or similar service here (Mapbox or google maps)</p>
               </div>
             </div>
           </div>
