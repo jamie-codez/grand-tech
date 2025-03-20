@@ -77,11 +77,11 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-bold">Our Office</h3>
                     <p className="text-muted-foreground">
-                      123 Tech Street, Suite 456
+                      123 Street, Suite 456
                       <br />
-                      San Francisco, CA 94103
+                      Nairobi, KE 94103
                       <br />
-                      United States
+                      Kenya
                     </p>
                   </div>
                 </div>
