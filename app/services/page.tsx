@@ -3,6 +3,9 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Code, Database, Globe, Laptop, LineChart, Palette } from "lucide-react"
 
+const baseUrl = process.env.GITHUB_PAGES ? "/grand-tech" : ""
+
+
 export default function ServicesPage() {
   const services = [
     {
@@ -201,7 +204,7 @@ export default function ServicesPage() {
             </div>
             <div className="flex items-center justify-center">
               <Image
-                src="/placeholder.svg?height=300&width=500"
+                src={`${baseUrl}/placeholder.svg?height=300&width=500`}
                 alt="CTA Image"
                 width={500}
                 height={300}
