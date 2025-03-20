@@ -2,6 +2,7 @@ let userConfig = undefined
 
 const nextConfig = {
   assetPrefix: process.env.GITHUB_PAGES ? '/grand-tech/' : '',
+  output: "export",
   eslint: {
     ignoreDuringBuilds: true,
   },
