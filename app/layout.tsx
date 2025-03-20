@@ -9,7 +9,7 @@ import Footer from "@/components/footer"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "GrandTech Solutions - Software Development Agency",
+  title: "GrandSoft Technologies - Software Development Agency",
   description: "We build innovative software solutions that drive business growth and enhance user experiences.",
 }
 

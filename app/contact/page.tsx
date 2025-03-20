@@ -90,9 +90,9 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-bold">Email Us</h3>
                     <p className="text-muted-foreground">
-                      info@grandtech.com
+                      info@grandsofttech.com
                       <br />
-                      support@grandtech.com
+                      support@grandsofttech.com
                     </p>
                   </div>
                 </div>
