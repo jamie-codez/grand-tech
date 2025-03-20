@@ -3,6 +3,8 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Award, Clock, Users } from "lucide-react"
 
+const baseUrl = process.env.GITHUB_PAGES ? "/grand-tech" : ""
+
 export default function AboutPage() {
   return (
     <div className="flex flex-col min-h-screen">
@@ -40,7 +42,7 @@ export default function AboutPage() {
             </div>
             <div className="flex items-center justify-center">
               <Image
-                src="/placeholder.svg?height=400&width=600&text=Our+Team"
+                src={`${baseUrl}/placeholder.svg?height=400&width=600&text=Our+Team`}
                 alt="Our Team"
                 width={600}
                 height={400}
@@ -117,7 +119,7 @@ export default function AboutPage() {
               <div key={member} className="flex flex-col items-center space-y-4 text-center">
                 <div className="overflow-hidden rounded-full">
                   <Image
-                    src={`/placeholder.svg?height=200&width=200&text=Team+Member+${member}`}
+                    src={`${baseUrl}/placeholder.svg?height=200&width=200&text=Team+Member+${member}`}
                     alt={`Team Member ${member}`}
                     width={200}
                     height={200}

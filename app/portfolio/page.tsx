@@ -3,6 +3,9 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 
+const baseUrl = process.env.GITHUB_PAGES ? "/grand-tech" : ""
+
+
 export default function PortfolioPage() {
   const categories = ["All", "Web Development", "Mobile Apps", "E-commerce", "Enterprise", "UI/UX Design"]
 
@@ -11,42 +14,42 @@ export default function PortfolioPage() {
       id: 1,
       title: "E-commerce Platform",
       category: "E-commerce",
-      image: "/placeholder.svg?height=400&width=600&text=E-commerce+Platform",
+      image: `${baseUrl}/placeholder.svg?height=400&width=600&text=E-commerce+Platform`,
       description: "A comprehensive e-commerce solution with advanced features and seamless user experience.",
     },
     {
       id: 2,
       title: "Healthcare Management System",
       category: "Enterprise",
-      image: "/placeholder.svg?height=400&width=600&text=Healthcare+System",
+      image: `${baseUrl}/placeholder.svg?height=400&width=600&text=Healthcare+System`,
       description: "A secure and efficient system for managing healthcare operations and patient data.",
     },
     {
       id: 3,
       title: "Travel Booking App",
       category: "Mobile Apps",
-      image: "/placeholder.svg?height=400&width=600&text=Travel+App",
+      image: `${baseUrl}/placeholder.svg?height=400&width=600&text=Travel+App`,
       description: "A feature-rich mobile application for booking flights, hotels, and experiences.",
     },
     {
       id: 4,
       title: "Financial Dashboard",
       category: "Web Development",
-      image: "/placeholder.svg?height=400&width=600&text=Financial+Dashboard",
+      image: `${baseUrl}/placeholder.svg?height=400&width=600&text=Financial+Dashboard`,
       description: "An intuitive dashboard for tracking financial metrics and making data-driven decisions.",
     },
     {
       id: 5,
       title: "Restaurant Ordering System",
       category: "E-commerce",
-      image: "/placeholder.svg?height=400&width=600&text=Restaurant+System",
+      image: `${baseUrl}/placeholder.svg?height=400&width=600&text=Restaurant+System`,
       description: "A streamlined ordering system for restaurants with real-time updates and inventory management.",
     },
     {
       id: 6,
       title: "Fitness Tracking App",
       category: "Mobile Apps",
-      image: "/placeholder.svg?height=400&width=600&text=Fitness+App",
+      image: `${baseUrl}/placeholder.svg?height=400&width=600&text=Fitness+App`,
       description: "A mobile app for tracking workouts, nutrition, and health metrics with personalized insights.",
     },
   ]
@@ -88,7 +91,7 @@ export default function PortfolioPage() {
               <div key={project.id} className="group relative overflow-hidden rounded-lg border bg-background">
                 <div className="aspect-video overflow-hidden">
                   <Image
-                    src={project.image || "/placeholder.svg"}
+                    src={project.image || `${baseUrl}/placeholder.svg`}
                     alt={project.title}
                     width={600}
                     height={400}

@@ -4,6 +4,8 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Calendar, Clock, User } from "lucide-react"
 
+const baseUrl = process.env.GITHUB_PAGES ? "/grand-tech" : ""
+
 export default function BlogPage() {
   const categories = ["All", "Web Development", "Mobile", "Design", "Technology", "Business"]
 
@@ -13,7 +15,7 @@ export default function BlogPage() {
       title: "The Future of Web Development: Trends to Watch in 2025",
       excerpt:
         "Explore the emerging technologies and methodologies that will shape web development in the coming years.",
-      image: "/placeholder.svg?height=400&width=600&text=Web+Development+Trends",
+      image: `${baseUrl}/placeholder.svg?height=400&width=600&text=Web+Development+Trends`,
       category: "Web Development",
       author: "Jane Smith",
       date: "March 15, 2025",
@@ -24,7 +26,7 @@ export default function BlogPage() {
       title: "Building Scalable Mobile Applications with React Native",
       excerpt:
         "Learn best practices for developing cross-platform mobile applications that can scale with your business.",
-      image: "/placeholder.svg?height=400&width=600&text=React+Native",
+      image: `${baseUrl}/placeholder.svg?height=400&width=600&text=React+Native`,
       category: "Mobile",
       author: "John Doe",
       date: "March 10, 2025",
@@ -34,7 +36,7 @@ export default function BlogPage() {
       id: 3,
       title: "The Impact of AI on Software Development",
       excerpt: "How artificial intelligence is transforming the way we build, test, and deploy software applications.",
-      image: "/placeholder.svg?height=400&width=600&text=AI+in+Development",
+      image: `${baseUrl}/placeholder.svg?height=400&width=600&text=AI+in+Development`,
       category: "Technology",
       author: "Alex Johnson",
       date: "March 5, 2025",
@@ -44,7 +46,7 @@ export default function BlogPage() {
       id: 4,
       title: "Designing User-Centered Interfaces: A Comprehensive Guide",
       excerpt: "Principles and practices for creating interfaces that prioritize user needs and experiences.",
-      image: "/placeholder.svg?height=400&width=600&text=UI+Design",
+      image: `${baseUrl}/placeholder.svg?height=400&width=600&text=UI+Design`,
       category: "Design",
       author: "Sarah Williams",
       date: "February 28, 2025",
@@ -54,7 +56,7 @@ export default function BlogPage() {
       id: 5,
       title: "Optimizing Website Performance: Speed and SEO",
       excerpt: "Strategies for improving website loading times and search engine rankings.",
-      image: "/placeholder.svg?height=400&width=600&text=Website+Performance",
+      image: `${baseUrl}/placeholder.svg?height=400&width=600&text=Website+Performance`,
       category: "Web Development",
       author: "Michael Brown",
       date: "February 20, 2025",
@@ -65,7 +67,7 @@ export default function BlogPage() {
       title: "Digital Transformation: Helping Businesses Adapt to the New Normal",
       excerpt:
         "How companies are leveraging technology to navigate changing market conditions and customer expectations.",
-      image: "/placeholder.svg?height=400&width=600&text=Digital+Transformation",
+      image: `${baseUrl}/placeholder.svg?height=400&width=600&text=Digital+Transformation`,
       category: "Business",
       author: "Emily Chen",
       date: "February 15, 2025",
@@ -132,7 +134,7 @@ export default function BlogPage() {
             </div>
             <div className="flex items-center justify-center">
               <Image
-                src={posts[0].image || "/placeholder.svg"}
+                src={posts[0].image || `${baseUrl}/placeholder.svg`}
                 alt={posts[0].title}
                 width={600}
                 height={400}
@@ -151,7 +153,7 @@ export default function BlogPage() {
               <div key={post.id} className="group relative overflow-hidden rounded-lg border bg-background">
                 <div className="aspect-video overflow-hidden">
                   <Image
-                    src={post.image || "/placeholder.svg"}
+                    src={post.image || `${baseUrl}/placeholder.svg`}
                     alt={post.title}
                     width={600}
                     height={400}

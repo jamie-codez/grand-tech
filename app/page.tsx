@@ -3,6 +3,8 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, CheckCircle, Code, Globe, Laptop, Zap } from "lucide-react"
 
+const baseUrl = process.env.GITHUB_PAGES ? "/grand-tech" : ""
+
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
@@ -33,7 +35,7 @@ export default function Home() {
               </div>
             </div>
             <Image
-              src="/placeholder.svg?height=550&width=550"
+              src={`${baseUrl}/placeholder.svg?height=550&width=550`}
               width={550}
               height={550}
               alt="Hero Image"
@@ -167,7 +169,7 @@ export default function Home() {
               <div key={project} className="group relative overflow-hidden rounded-lg border bg-background">
                 <div className="aspect-video overflow-hidden">
                   <Image
-                    src={`/placeholder.svg?height=400&width=600&text=Project+${project}`}
+                    src={`${baseUrl}/placeholder.svg?height=400&width=600&text=Project+${project}`}
                     alt={`Project ${project}`}
                     width={600}
                     height={400}
