@@ -50,7 +50,7 @@ export default function ServicesPage() {
       icon: <LineChart className="h-10 w-10" />,
       title: "IT Consulting",
       description: "Strategic technology guidance to help you make informed decisions and achieve your business goals.",
-      features: ["Technology Assessment", "Digital Transformation", "IT Strategy", "Project Management"],
+      features: ["Technology Assessment", "Digital Transformation", "IT Strategy", "Project Management", "Product Management"],
       link: "/services/consulting",
     },
   ]
