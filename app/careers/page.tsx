@@ -104,38 +104,38 @@ export default function AboutPage() {
       </section>
 
       {/* Team Section */}
-      {/*<section className="w-full py-12 md:py-24 lg:py-32">*/}
-      {/*  <div className="container px-4 md:px-6">*/}
-      {/*    <div className="flex flex-col items-center justify-center space-y-4 text-center">*/}
-      {/*      <div className="space-y-2">*/}
-      {/*        <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Meet Our Team</h2>*/}
-      {/*        <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">*/}
-      {/*          The talented individuals who make our vision a reality.*/}
-      {/*        </p>*/}
-      {/*      </div>*/}
-      {/*    </div>*/}
-      {/*    <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 md:grid-cols-2 lg:grid-cols-3">*/}
-      {/*      {[1, 2, 3, 4, 5, 6].map((member) => (*/}
-      {/*        <div key={member} className="flex flex-col items-center space-y-4 text-center">*/}
-      {/*          <div className="overflow-hidden rounded-full">*/}
-      {/*            <Image*/}
-      {/*              src={`${baseUrl}/placeholder.svg?height=200&width=200&text=Team+Member+${member}`}*/}
-      {/*              alt={`Team Member ${member}`}*/}
-      {/*              width={200}*/}
-      {/*              height={200}*/}
-      {/*              className="aspect-square object-cover"*/}
-      {/*            />*/}
-      {/*          </div>*/}
-      {/*          <div className="space-y-2">*/}
-      {/*            <h3 className="text-xl font-bold">Team Member {member}</h3>*/}
-      {/*            <p className="text-sm text-muted-foreground">Position Title</p>*/}
-      {/*            <p className="text-sm text-muted-foreground">Brief bio about the team member and their expertise.</p>*/}
-      {/*          </div>*/}
-      {/*        </div>*/}
-      {/*      ))}*/}
-      {/*    </div>*/}
-      {/*  </div>*/}
-      {/*</section>*/}
+      <section className="w-full py-12 md:py-24 lg:py-32">
+        <div className="container px-4 md:px-6">
+          <div className="flex flex-col items-center justify-center space-y-4 text-center">
+            <div className="space-y-2">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Meet Our Team</h2>
+              <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                The talented individuals who make our vision a reality.
+              </p>
+            </div>
+          </div>
+          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 md:grid-cols-2 lg:grid-cols-3">
+            {[1, 2, 3, 4, 5, 6].map((member) => (
+              <div key={member} className="flex flex-col items-center space-y-4 text-center">
+                <div className="overflow-hidden rounded-full">
+                  <Image
+                    src={`${baseUrl}/placeholder.svg?height=200&width=200&text=Team+Member+${member}`}
+                    alt={`Team Member ${member}`}
+                    width={200}
+                    height={200}
+                    className="aspect-square object-cover"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <h3 className="text-xl font-bold">Team Member {member}</h3>
+                  <p className="text-sm text-muted-foreground">Position Title</p>
+                  <p className="text-sm text-muted-foreground">Brief bio about the team member and their expertise.</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* CTA Section */}
       <section className="w-full py-12 md:py-24 lg:py-32 bg-primary text-primary-foreground">
