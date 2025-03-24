@@ -1,12 +1,32 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Code, Database, Globe, Laptop, LineChart, Palette } from "lucide-react"
+// import { ArrowRight, Code, Database, Globe, Laptop, LineChart, Palette } from "lucide-react"
+import { ArrowRight, Code, Database, Globe, Laptop, LineChart, Palette, Atom, Webhook, Network, Phone, AppWindowMac, Kanban, Snail, Cog, DatabaseBackup, DatabaseIcon, Cloud,Coffee, Container,RadioTower } from "lucide-react"
+
 
 const baseUrl = process.env.GITHUB_PAGES ? "/grand-tech" : ""
 
 
 export default function ServicesPage() {
+  const technologies =  [
+    { name: "React", icon: <Atom className="h-10 w-10" /> },
+    { name: "Node.js", icon: <Webhook className="h-10 w-10" /> },
+    { name: "Next.js", icon: <Network className="h-10 w-10" /> },
+    { name: "Mobile", icon: <Phone className="h-10 w-10" /> },
+    { name: "Swift", icon: <AppWindowMac className="h-10 w-10" /> },
+    { name: "Kotlin", icon: <Kanban className="h-10 w-10" /> },
+    { name: "Java", icon: <Coffee className="h-10 w-10" /> },
+    { name: "Python", icon: <Snail className="h-10 w-10" /> },
+    { name: "Django", icon: <Cog className="h-10 w-10" /> },
+    { name: "Fast API", icon: <DatabaseBackup className="h-10 w-10" /> },
+    { name: "MongoDB", icon: <DatabaseIcon className="h-10 w-10" /> },
+    { name: "PostgreSQL", icon: <DatabaseIcon className="h-10 w-10" /> },
+    { name: "AWS", icon: <Cloud className="h-10 w-10" /> },
+    { name: "Docker", icon: <Container className="h-10 w-10" /> },
+    { name: "IoT", icon: <RadioTower className="h-10 w-10" /> },
+  ]
+
   const services = [
     {
       icon: <Globe className="h-10 w-10" />,
@@ -165,10 +185,10 @@ export default function ServicesPage() {
             </div>
           </div>
           <div className="mx-auto grid max-w-5xl grid-cols-2 gap-6 py-12 md:grid-cols-3 lg:grid-cols-6">
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((tech) => (
-              <div key={tech} className="flex flex-col items-center space-y-2 rounded-lg border p-4">
-                <div className="h-12 w-12 bg-muted rounded-md"></div>
-                <p className="text-sm font-medium">Technology {tech}</p>
+            {technologies.map((tech,index) => (
+              <div key={index} className="flex flex-col items-center space-y-2 rounded-lg border p-4">
+                <div className="h-12 w-12 rounded-md">{tech.icon}</div>
+                <p className="text-sm font-medium">{tech.name}</p>
               </div>
             ))}
           </div>
@@ -204,7 +224,7 @@ export default function ServicesPage() {
             </div>
             <div className="flex items-center justify-center">
               <Image
-                src={`${baseUrl}/placeholder.svg?height=300&width=500`}
+                src={`${baseUrl}/contact_page_website.webp?height=300&width=500`}
                 alt="CTA Image"
                 width={500}
                 height={300}
