@@ -42,7 +42,7 @@ export default function AboutPage() {
             </div>
             <div className="flex items-center justify-center">
               <Image
-                src={`${baseUrl}/placeholder.svg?height=400&width=600&text=Our+Team`}
+                src={`${baseUrl}/about_us_page.webp?height=400&width=600&text=Our+Team`}
                 alt="Our Team"
                 width={600}
                 height={400}

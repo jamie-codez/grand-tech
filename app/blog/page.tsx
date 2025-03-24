@@ -15,7 +15,7 @@ export default function BlogPage() {
       title: "The Future of Web Development: Trends to Watch in 2025",
       excerpt:
         "Explore the emerging technologies and methodologies that will shape web development in the coming years.",
-      image: `${baseUrl}/placeholder.svg?height=400&width=600&text=Web+Development+Trends`,
+      image: `${baseUrl}/about_us_page.webp?height=400&width=600&text=Web+Development+Trends`,
       category: "Web Development",
       author: "Jane Smith",
       date: "March 15, 2025",

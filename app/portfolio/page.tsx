@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
+import {ArrowRight, User} from "lucide-react"
 
 const baseUrl = process.env.GITHUB_PAGES ? "/grand-tech" : ""
 
@@ -14,43 +14,61 @@ export default function PortfolioPage() {
       id: 1,
       title: "E-commerce Platform",
       category: "E-commerce",
-      image: `${baseUrl}/placeholder.svg?height=400&width=600&text=E-commerce+Platform`,
+      image: `${baseUrl}/commerce.jpeg?height=400&width=600&text=E-commerce+Platform`,
       description: "A comprehensive e-commerce solution with advanced features and seamless user experience.",
     },
     {
       id: 2,
       title: "Healthcare Management System",
       category: "Enterprise",
-      image: `${baseUrl}/placeholder.svg?height=400&width=600&text=Healthcare+System`,
+      image: `${baseUrl}/health.jpeg?height=400&width=600&text=Healthcare+System`,
       description: "A secure and efficient system for managing healthcare operations and patient data.",
     },
     {
       id: 3,
       title: "Travel Booking App",
       category: "Mobile Apps",
-      image: `${baseUrl}/placeholder.svg?height=400&width=600&text=Travel+App`,
+      image: `${baseUrl}/travel.jpeg?height=400&width=600&text=Travel+App`,
       description: "A feature-rich mobile application for booking flights, hotels, and experiences.",
     },
     {
       id: 4,
       title: "Financial Dashboard",
       category: "Web Development",
-      image: `${baseUrl}/placeholder.svg?height=400&width=600&text=Financial+Dashboard`,
+      image: `${baseUrl}/finance.jpeg?height=400&width=600&text=Financial+Dashboard`,
       description: "An intuitive dashboard for tracking financial metrics and making data-driven decisions.",
     },
     {
       id: 5,
       title: "Restaurant Ordering System",
       category: "E-commerce",
-      image: `${baseUrl}/placeholder.svg?height=400&width=600&text=Restaurant+System`,
+      image: `${baseUrl}/order.jpeg?height=400&width=600&text=Restaurant+System`,
       description: "A streamlined ordering system for restaurants with real-time updates and inventory management.",
     },
     {
       id: 6,
       title: "Fitness Tracking App",
       category: "Mobile Apps",
-      image: `${baseUrl}/placeholder.svg?height=400&width=600&text=Fitness+App`,
+      image: `${baseUrl}/fitness.jpeg?height=400&width=600&text=Fitness+App`,
       description: "A mobile app for tracking workouts, nutrition, and health metrics with personalized insights.",
+    },
+  ]
+
+  const testimonials = [
+    {
+      name: "Alan Wekesa",
+      position: "CEO, NashTech",
+      text: "The team delivered an exceptional solution that exceeded our expectations. Their attention to detail and commitment to quality is impressive.",
+    },
+    {
+      name: "Kevin Ochieng",
+      position: "CTO, Softech",
+      text: "Working with this team was a pleasure. They were professional, responsive, and delivered a high-quality product on time.",
+    },
+    {
+      name: "Michael Momanyi",
+      position: "Product Manager, Itech",
+      text: "Their expertise and dedication were evident throughout the project. We are thrilled with the results and look forward to future collaborations.",
     },
   ]
 
@@ -126,44 +144,41 @@ export default function PortfolioPage() {
             </div>
           </div>
           <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 md:grid-cols-2 lg:grid-cols-3">
-            {[1, 2, 3].map((testimonial) => (
-              <div
-                key={testimonial}
-                className="flex flex-col justify-between rounded-lg border bg-background p-6 shadow-sm"
-              >
-                <div className="space-y-4">
-                  <div className="flex space-x-1">
-                    {[...Array(5)].map((_, i) => (
-                      <svg
-                        key={i}
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        className="h-5 w-5 text-primary"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    ))}
+            {testimonials.map((testimonial, index) => (
+                <div
+                    key={index}
+                    className="flex flex-col justify-between rounded-lg border bg-background p-6 shadow-sm"
+                >
+                  <div className="space-y-4">
+                    <div className="flex space-x-1">
+                      {[...Array(5)].map((_, i) => (
+                          <svg
+                              key={i}
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24"
+                              fill="currentColor"
+                              className="h-5 w-5 text-primary"
+                          >
+                            <path
+                                fillRule="evenodd"
+                                d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                                clipRule="evenodd"
+                            />
+                          </svg>
+                      ))}
+                    </div>
+                    <p className="text-muted-foreground">{testimonial.text}</p>
                   </div>
-                  <p className="text-muted-foreground">
-                    "The team delivered an exceptional solution that exceeded our expectations. Their attention to
-                    detail and commitment to quality is impressive."
-                  </p>
-                </div>
-                <div className="mt-6 flex items-center space-x-4">
-                  <div className="rounded-full bg-muted">
-                    <div className="h-10 w-10 rounded-full bg-muted" />
-                  </div>
-                  <div>
-                    <p className="text-sm font-medium">Client Name</p>
-                    <p className="text-xs text-muted-foreground">Position, Company {testimonial}</p>
+                  <div className="mt-6 flex items-center space-x-4">
+                    <div className="rounded-full bg-muted p-1">
+                      <User className={""}/>
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium">{testimonial.name}</p>
+                      <p className="text-xs text-muted-foreground">{testimonial.position}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
             ))}
           </div>
         </div>
