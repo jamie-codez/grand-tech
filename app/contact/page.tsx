@@ -90,8 +90,10 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-bold">Email Us</h3>
                     <p className="text-muted-foreground">
+                      legendarysoftwaresolutions@gmail.com
+                      <br/>
                       info@grandsofttech.com
-                      <br />
+                      <br/>
                       support@grandsofttech.com
                     </p>
                   </div>
@@ -101,7 +103,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-bold">Call Us</h3>
                     <p className="text-muted-foreground">
-                      +25471234567
+                      +254791725651 | +254713662547
                       <br />
                       Mon-Fri, 9am-6pm PST
                     </p>
