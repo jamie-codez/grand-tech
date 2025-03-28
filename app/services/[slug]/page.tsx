@@ -10,6 +10,8 @@ const getServiceBySlug = (slug: string): ServiceDetail | undefined => {
     return servicesDetails.find((serviceDetail) => serviceDetail.slug === slug)
 }
 
+const baseUrl = process.env.GITHUB_PAGES ? "/grand-tech" : ""
+
 const ServiceDetailPage:FC<PageParams>=async ({params})=> {
     const {slug} = await params;
     const service = getServiceBySlug(slug);
@@ -29,7 +31,7 @@ const ServiceDetailPage:FC<PageParams>=async ({params})=> {
                                     </Button>
                                 </Link>
                                 <Link href="/portfolio">
-                                    <Button size="lg" variant="outline">
+                                    <Button size="lg" variant="outline" className={"hover:border-2 hover:border-primary"}>
                                         View Related Projects
                                     </Button>
                                 </Link>
@@ -37,7 +39,7 @@ const ServiceDetailPage:FC<PageParams>=async ({params})=> {
                         </div>
                         <div className="flex items-center justify-center">
                             <Image
-                                src={service?.image || "/placeholder.svg"}
+                                src={`${baseUrl}${service?.image}` || `${baseUrl}/placeholder.svg`}
                                 alt={service?.title!}
                                 width={800}
                                 height={600}
