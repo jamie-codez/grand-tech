@@ -2,6 +2,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Facebook, Github, Instagram, Linkedin, Twitter } from "lucide-react"
+import {servicesDetails} from "@/lib/data/services";
 
 export default function Footer() {
   return (
@@ -75,36 +76,13 @@ export default function Footer() {
           <div className="space-y-4">
             <h3 className="text-lg font-bold">Services</h3>
             <ul className="space-y-2 text-sm">
-              <li>
-                <Link href="/services/web-development" className="text-muted-foreground hover:text-foreground">
-                  Web Development
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/mobile-development" className="text-muted-foreground hover:text-foreground">
-                  Mobile Development
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/custom-software" className="text-muted-foreground hover:text-foreground">
-                  Custom Software
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/ui-ux-design" className="text-muted-foreground hover:text-foreground">
-                  UI/UX Design
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/cloud-solutions" className="text-muted-foreground hover:text-foreground">
-                  Cloud Solutions
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/consulting" className="text-muted-foreground hover:text-foreground">
-                  IT Consulting
-                </Link>
-              </li>
+              {servicesDetails.map((service,index)=>(
+                  <li>
+                    <Link href={`/services/${service.slug}`} className="text-muted-foreground hover:text-foreground">
+                      {service.title}
+                    </Link>
+                  </li>
+              ))}
             </ul>
           </div>
           <div className="space-y-4">

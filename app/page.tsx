@@ -2,6 +2,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, CheckCircle, Code, Globe, Laptop, Zap } from "lucide-react"
+import {testimonials} from "@/lib/data/home";
 
 const baseUrl = process.env.GITHUB_PAGES ? "/grand-tech" : ""
 
@@ -35,7 +36,7 @@ export default function Home() {
               </div>
             </div>
             <Image
-              src={`${baseUrl}/home_page.webp?height=550&width=550`}
+              src={`${baseUrl}/pictures/home_page.webp?height=550&width=550`}
               width={550}
               height={550}
               alt="Hero Image"
@@ -169,7 +170,7 @@ export default function Home() {
               <div key={project} className="group relative overflow-hidden rounded-lg border bg-background">
                 <div className="aspect-video overflow-hidden">
                   <Image
-                    src={`${baseUrl}/placeholder.svg?height=400&width=600&text=Project+${project}`}
+                    src={`${baseUrl}/pictures/placeholder.svg?height=400&width=600&text=Project+${project}`}
                     alt={`Project ${project}`}
                     width={600}
                     height={400}
@@ -213,29 +214,38 @@ export default function Home() {
             </div>
           </div>
           <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 md:grid-cols-2 lg:grid-cols-3">
-            {[1, 2, 3].map((testimonial) => (
+            {testimonials.map((testimonial,index) => (
               <div
-                key={testimonial}
+                key={index}
                 className="flex flex-col justify-between rounded-lg border bg-background p-6 shadow-sm"
               >
                 <div className="space-y-4">
                   <div className="flex space-x-1">
                     {[...Array(5)].map((_, i) => (
-                      <Zap key={i} className="h-5 w-5 fill-primary text-primary" />
+                        <svg
+                            key={i}
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            className="h-5 w-5 text-primary"
+                        >
+                          <path
+                              fillRule="evenodd"
+                              d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                              clipRule="evenodd"
+                          />
+                        </svg>
                     ))}
                   </div>
-                  <p className="text-muted-foreground">
-                    "The team delivered an exceptional solution that exceeded our expectations. Their attention to
-                    detail and commitment to quality is impressive."
-                  </p>
+                  <p className="text-muted-foreground">{testimonial.text}</p>
                 </div>
                 <div className="mt-6 flex items-center space-x-4">
                   <div className="rounded-full bg-muted">
                     <div className="h-10 w-10 rounded-full bg-muted" />
                   </div>
                   <div>
-                    <p className="text-sm font-medium">Client Name</p>
-                    <p className="text-xs text-muted-foreground">Position, Company {testimonial}</p>
+                    <p className="text-sm font-medium">{testimonial.name}</p>
+                    <p className="text-xs text-muted-foreground">{testimonial.position}</p>
                   </div>
                 </div>
               </div>

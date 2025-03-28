@@ -2,75 +2,13 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import {ArrowRight, User} from "lucide-react"
+import {categories, projects, testimonials} from "@/lib/data/home"
+import {projectsDetails} from "@/lib/data/portfolio";
 
 const baseUrl = process.env.GITHUB_PAGES ? "/grand-tech" : ""
 
 
 export default function PortfolioPage() {
-  const categories = ["All", "Web Development", "Mobile Apps", "E-commerce", "Enterprise", "UI/UX Design"]
-
-  const projects = [
-    {
-      id: 1,
-      title: "E-commerce Platform",
-      category: "E-commerce",
-      image: `${baseUrl}/commerce.jpeg?height=400&width=600&text=E-commerce+Platform`,
-      description: "A comprehensive e-commerce solution with advanced features and seamless user experience.",
-    },
-    {
-      id: 2,
-      title: "Healthcare Management System",
-      category: "Enterprise",
-      image: `${baseUrl}/health.jpeg?height=400&width=600&text=Healthcare+System`,
-      description: "A secure and efficient system for managing healthcare operations and patient data.",
-    },
-    {
-      id: 3,
-      title: "Travel Booking App",
-      category: "Mobile Apps",
-      image: `${baseUrl}/travel.jpeg?height=400&width=600&text=Travel+App`,
-      description: "A feature-rich mobile application for booking flights, hotels, and experiences.",
-    },
-    {
-      id: 4,
-      title: "Financial Dashboard",
-      category: "Web Development",
-      image: `${baseUrl}/finance.jpeg?height=400&width=600&text=Financial+Dashboard`,
-      description: "An intuitive dashboard for tracking financial metrics and making data-driven decisions.",
-    },
-    {
-      id: 5,
-      title: "Restaurant Ordering System",
-      category: "E-commerce",
-      image: `${baseUrl}/order.jpeg?height=400&width=600&text=Restaurant+System`,
-      description: "A streamlined ordering system for restaurants with real-time updates and inventory management.",
-    },
-    {
-      id: 6,
-      title: "Fitness Tracking App",
-      category: "Mobile Apps",
-      image: `${baseUrl}/fitness.jpeg?height=400&width=600&text=Fitness+App`,
-      description: "A mobile app for tracking workouts, nutrition, and health metrics with personalized insights.",
-    },
-  ]
-
-  const testimonials = [
-    {
-      name: "Alan Wekesa",
-      position: "CEO, NashTech",
-      text: "The team delivered an exceptional solution that exceeded our expectations. Their attention to detail and commitment to quality is impressive.",
-    },
-    {
-      name: "Kevin Ochieng",
-      position: "CTO, Softech",
-      text: "Working with this team was a pleasure. They were professional, responsive, and delivered a high-quality product on time.",
-    },
-    {
-      name: "Michael Momanyi",
-      position: "Product Manager, Itech",
-      text: "Their expertise and dedication were evident throughout the project. We are thrilled with the results and look forward to future collaborations.",
-    },
-  ]
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -105,11 +43,11 @@ export default function PortfolioPage() {
       <section className="w-full py-6 md:py-12 lg:py-24">
         <div className="container px-4 md:px-6">
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {projects.map((project) => (
-              <div key={project.id} className="group relative overflow-hidden rounded-lg border bg-background">
+            {projectsDetails.map((project,index) => (
+              <div key={index} className="group relative overflow-hidden rounded-lg border bg-background">
                 <div className="aspect-video overflow-hidden">
                   <Image
-                    src={project.image || `${baseUrl}/placeholder.svg`}
+                    src={`${baseUrl}${project.mainImage}` || `${baseUrl}/placeholder.svg`}
                     alt={project.title}
                     width={600}
                     height={400}
@@ -119,8 +57,8 @@ export default function PortfolioPage() {
                 <div className="p-4">
                   <div className="inline-block rounded-full bg-muted px-3 py-1 text-xs mb-2">{project.category}</div>
                   <h3 className="text-xl font-bold">{project.title}</h3>
-                  <p className="mt-2 text-muted-foreground">{project.description}</p>
-                  <Link href={`/portfolio/project-${project.id}`}>
+                  <p className="mt-2 text-muted-foreground">{project.shortDescription}</p>
+                  <Link href={`/portfolio/${project.slug}`}>
                     <Button variant="link" className="mt-2 p-0">
                       View Case Study <ArrowRight className="ml-1 h-4 w-4" />
                     </Button>

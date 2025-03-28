@@ -1,79 +1,14 @@
 import Image from "next/image"
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
-// import { ArrowRight, Code, Database, Globe, Laptop, LineChart, Palette } from "lucide-react"
-import { ArrowRight, Code, Database, Globe, Laptop, LineChart, Palette, Atom, Webhook, Network, Phone, AppWindowMac, Kanban, Snail, Cog, DatabaseBackup, DatabaseIcon, Cloud,Coffee, Container,RadioTower } from "lucide-react"
+import {Button} from "@/components/ui/button"
+import {ArrowRight} from "lucide-react"
+import {processStructure, services, servicesDetails, technologies} from "@/lib/data/services";
 
 
 const baseUrl = process.env.GITHUB_PAGES ? "/grand-tech" : ""
 
 
 export default function ServicesPage() {
-  const technologies =  [
-    { name: "React", icon: <Atom className="h-10 w-10" /> },
-    { name: "Node.js", icon: <Webhook className="h-10 w-10" /> },
-    { name: "Next.js", icon: <Network className="h-10 w-10" /> },
-    { name: "Mobile", icon: <Phone className="h-10 w-10" /> },
-    { name: "Swift", icon: <AppWindowMac className="h-10 w-10" /> },
-    { name: "Kotlin", icon: <Kanban className="h-10 w-10" /> },
-    { name: "Java", icon: <Coffee className="h-10 w-10" /> },
-    { name: "Python", icon: <Snail className="h-10 w-10" /> },
-    { name: "Django", icon: <Cog className="h-10 w-10" /> },
-    { name: "Fast API", icon: <DatabaseBackup className="h-10 w-10" /> },
-    { name: "MongoDB", icon: <DatabaseIcon className="h-10 w-10" /> },
-    { name: "PostgreSQL", icon: <DatabaseIcon className="h-10 w-10" /> },
-    { name: "AWS", icon: <Cloud className="h-10 w-10" /> },
-    { name: "Docker", icon: <Container className="h-10 w-10" /> },
-    { name: "IoT", icon: <RadioTower className="h-10 w-10" /> },
-  ]
-
-  const services = [
-    {
-      icon: <Globe className="h-10 w-10" />,
-      title: "Web Development",
-      description:
-        "Custom websites and web applications built with the latest technologies for optimal performance and user experience.",
-      features: ["Responsive Design", "E-commerce Solutions", "Progressive Web Apps", "Content Management Systems"],
-      link: "/services/web-development",
-    },
-    {
-      icon: <Laptop className="h-10 w-10" />,
-      title: "Mobile Development",
-      description:
-        "Native and cross-platform mobile applications that deliver exceptional user experiences across all devices.",
-      features: ["iOS Development", "Android Development", "Cross-Platform Solutions", "Mobile App Testing"],
-      link: "/services/mobile-development",
-    },
-    {
-      icon: <Code className="h-10 w-10" />,
-      title: "Custom Software",
-      description:
-        "Tailored software solutions designed to address your specific business challenges and streamline operations.",
-      features: ["Enterprise Applications", "SaaS Products", "API Development", "Legacy System Modernization"],
-      link: "/services/custom-software",
-    },
-    {
-      icon: <Palette className="h-10 w-10" />,
-      title: "UI/UX Design",
-      description: "User-centered design that enhances usability, accessibility, and overall user satisfaction.",
-      features: ["User Research", "Wireframing & Prototyping", "Visual Design", "Usability Testing"],
-      link: "/services/ui-ux-design",
-    },
-    {
-      icon: <Database className="h-10 w-10" />,
-      title: "Cloud Solutions",
-      description: "Scalable and secure cloud infrastructure that supports your business needs and growth.",
-      features: ["Cloud Migration", "DevOps", "Serverless Architecture", "Cloud Security"],
-      link: "/services/cloud-solutions",
-    },
-    {
-      icon: <LineChart className="h-10 w-10" />,
-      title: "IT Consulting",
-      description: "Strategic technology guidance to help you make informed decisions and achieve your business goals.",
-      features: ["Technology Assessment", "Digital Transformation", "IT Strategy", "Project Management", "Product Management"],
-      link: "/services/consulting",
-    },
-  ]
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -95,7 +30,7 @@ export default function ServicesPage() {
       <section className="w-full py-12 md:py-24 lg:py-32">
         <div className="container px-4 md:px-6">
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {services.map((service, index) => (
+            {servicesDetails.map((service, index) => (
               <div key={index} className="flex flex-col space-y-4 rounded-lg border p-6">
                 <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
                   {service.icon}
@@ -105,15 +40,15 @@ export default function ServicesPage() {
                   <p className="text-muted-foreground">{service.description}</p>
                 </div>
                 <ul className="space-y-2 text-sm">
-                  {service.features.map((feature, i) => (
+                  {service.options.map((option, i) => (
                     <li key={i} className="flex items-center">
                       <div className="mr-2 h-1 w-1 rounded-full bg-primary"></div>
-                      {feature}
+                      {option.title}
                     </li>
                   ))}
                 </ul>
                 <div className="pt-4 mt-auto">
-                  <Link href={service.link}>
+                  <Link href={`/services/${service.slug}`}>
                     <Button variant="outline" className="w-full gap-1">
                       Learn More <ArrowRight className="h-4 w-4" />
                     </Button>
@@ -137,28 +72,7 @@ export default function ServicesPage() {
             </div>
           </div>
           <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 py-12 md:grid-cols-2 lg:grid-cols-4">
-            {[
-              {
-                step: "01",
-                title: "Discovery",
-                description: "We start by understanding your business, goals, and requirements.",
-              },
-              {
-                step: "02",
-                title: "Planning",
-                description: "We create a detailed roadmap and technical specifications for your project.",
-              },
-              {
-                step: "03",
-                title: "Development",
-                description: "Our team builds your solution using agile methodologies and best practices.",
-              },
-              {
-                step: "04",
-                title: "Delivery",
-                description: "We deploy your solution and provide ongoing support and maintenance.",
-              },
-            ].map((item, index) => (
+            {processStructure.map((item, index) => (
               <div key={index} className="flex flex-col space-y-4">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground">
                   <span className="text-lg font-bold">{item.step}</span>
@@ -224,7 +138,7 @@ export default function ServicesPage() {
             </div>
             <div className="flex items-center justify-center">
               <Image
-                src={`${baseUrl}/contact_page_website.webp?height=300&width=500`}
+                src={`${baseUrl}/pictures/contact_page_website.webp?height=300&width=500`}
                 alt="CTA Image"
                 width={500}
                 height={300}
