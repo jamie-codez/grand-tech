@@ -13,7 +13,6 @@ import Image from "next/image";
 export const Header=()=> {
   const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname();
-  const baseUrl = process.env.GITHUB_PAGES ? "/grand-tech" : ""
 
   const navItems = [
     { name: "Home", href: "/" },
@@ -28,9 +27,6 @@ export const Header=()=> {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-2">
-          <div className="rounded-full bg-muted border-2 border-primary">
-            <Image src={`${baseUrl}/icon.jpg`} alt={"logo"} width={30} height={30} className={"rounded-full"} />
-          </div>
           <Link href="/" className="font-bold text-xl">
             GrandSoft Technologies
           </Link>
