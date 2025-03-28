@@ -11,6 +11,9 @@ const getProjectBySlug = (slug: string) => {
     return projectsDetails.find((projectDetail) => projectDetail.slug === slug);
 };
 
+const baseUrl = process.env.GITHUB_PAGES ? "/grand-tech" : ""
+
+
 const ProjectDetailPage: FC<PageParams> = async ({ params }) => {
     const {slug} = await params;
     const project = getProjectBySlug(slug);
@@ -42,7 +45,7 @@ const ProjectDetailPage: FC<PageParams> = async ({ params }) => {
                     <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
                         <div className="flex items-center justify-center">
                             <Image
-                                src={project.mainImage || "/placeholder.svg"}
+                                src={`${baseUrl}${project.mainImage}` || `${baseUrl}/pictures/placeholder.svg`}
                                 alt={project.title}
                                 width={800}
                                 height={600}
@@ -152,7 +155,7 @@ const ProjectDetailPage: FC<PageParams> = async ({ params }) => {
                         {project.images.map((image, index) => (
                             <div key={index} className="overflow-hidden rounded-lg">
                                 <Image
-                                    src={image || "/placeholder.svg"}
+                                    src={`${baseUrl}${image}` || `${baseUrl}/placeholder.svg`}
                                     alt={`${project.title} - Image ${index + 1}`}
                                     width={800}
                                     height={600}

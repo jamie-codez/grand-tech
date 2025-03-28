@@ -1,8 +1,8 @@
 import Image from "next/image"
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
+import {Button} from "@/components/ui/button"
 import {ArrowRight, User} from "lucide-react"
-import {categories, projects, testimonials} from "@/lib/data/home"
+import {categories, testimonials} from "@/lib/data/home"
 import {projectsDetails} from "@/lib/data/portfolio";
 
 const baseUrl = process.env.GITHUB_PAGES ? "/grand-tech" : ""
