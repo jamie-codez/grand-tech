@@ -222,8 +222,8 @@ export default function Home() {
                                     <p className="text-muted-foreground">{testimonial.text}</p>
                                 </div>
                                 <div className="mt-6 flex items-center space-x-4">
-                                    <div className="rounded-full bg-muted">
-                                        <div className="h-10 w-10 rounded-full bg-muted"/>
+                                    <div className="rounded-full bg-muted border-2 border-primary">
+                                        <Image src={testimonial.image} alt={testimonial.name} width={30} height={30} className={"rounded-full"} />
                                     </div>
                                     <div>
                                         <p className="text-sm font-medium">{testimonial.name}</p>

@@ -7,6 +7,9 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { ModeToggle } from "@/components/mode-toggle"
 import { Menu } from "lucide-react"
 import {usePathname} from "next/navigation";
+import Image from "next/image";
+
+const baseUrl = process.env.GITHUB_PAGES ? "/grand-tech" : ""
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -27,6 +30,9 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-2">
+          <div className="rounded-full bg-muted border-2 border-primary">
+            <Image src={`${baseUrl}/icon.jpg`} alt={"logo"} width={30} height={30} className={"rounded-full"} />
+          </div>
           <Link href="/" className="font-bold text-xl">
             GrandSoft Technologies
           </Link>

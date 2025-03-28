@@ -1,21 +1,4 @@
-import {
-    BarChart,
-    Cloud,
-    Code,
-    Database,
-    FlaskConical,
-    GitGraph,
-    Globe,
-    InfinityIcon,
-    Laptop,
-    LineChart,
-    Network,
-    Palette,
-    RadioTower,
-    Server,
-    ServerIcon,
-    Shield
-} from "lucide-react";
+import {BarChart, Cloud, Code, GitGraph, Globe, InfinityIcon, LineChart, Palette, RadioTower, Server, ServerIcon, Shield} from "lucide-react";
 import {DiAws, DiMongodb, DiNodejs, DiSwift} from "react-icons/di";
 import {SiBackendless, SiElasticcloud, SiFastapi, SiGrafana, SiKotlin, SiNestjs, SiPostgresql, SiPrometheus, SiQuarkus, SiSpringboot, SiSwagger, SiTravisci} from "react-icons/si";
 import {BiLogoDjango, BiLogoFlask, BiLogoFlutter} from "react-icons/bi";
