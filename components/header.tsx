@@ -9,11 +9,11 @@ import { Menu } from "lucide-react"
 import {usePathname} from "next/navigation";
 import Image from "next/image";
 
-const baseUrl = process.env.GITHUB_PAGES ? "/grand-tech" : ""
 
-export default function Header() {
+export const Header=()=> {
   const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname();
+  const baseUrl = process.env.GITHUB_PAGES ? "/grand-tech" : ""
 
   const navItems = [
     { name: "Home", href: "/" },
@@ -23,8 +23,6 @@ export default function Header() {
     // { name: "Blog", href: "/blog" },
     { name: "Contact", href: "/contact" },
   ]
-
-  console.log(pathname)
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
