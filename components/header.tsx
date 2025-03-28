@@ -6,9 +6,11 @@ import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { ModeToggle } from "@/components/mode-toggle"
 import { Menu } from "lucide-react"
+import {usePathname} from "next/navigation";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
+  const pathname = usePathname();
 
   const navItems = [
     { name: "Home", href: "/" },
@@ -18,6 +20,8 @@ export default function Header() {
     // { name: "Blog", href: "/blog" },
     { name: "Contact", href: "/contact" },
   ]
+
+  console.log(pathname)
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -31,7 +35,7 @@ export default function Header() {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex gap-6">
           {navItems.map((item) => (
-            <Link key={item.name} href={item.href} className="text-sm font-medium transition-colors hover:text-primary">
+            <Link key={item.name} href={item.href} className={`text-sm font-medium transition-colors ${pathname===item.href?"text-blue-600":""} hover:text-primary`}>
               {item.name}
             </Link>
           ))}

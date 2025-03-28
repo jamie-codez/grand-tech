@@ -2,7 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import {Button} from "@/components/ui/button"
 import {ArrowRight} from "lucide-react"
-import {processStructure, services, servicesDetails, technologies} from "@/lib/data/services";
+import {processStructure, servicesDetails, technologies} from "@/lib/data/services";
 
 
 const baseUrl = process.env.GITHUB_PAGES ? "/grand-tech" : ""
