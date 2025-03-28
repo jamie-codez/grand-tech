@@ -1,8 +1,8 @@
 import {BarChart, Cloud, Code, Database, GitGraph, Globe, InfinityIcon, Laptop, LineChart, Network, Palette, RadioTower, Server, ServerIcon, Shield} from "lucide-react";
 import {DiAws, DiMongodb, DiNodejs, DiSwift} from "react-icons/di";
-import {SiFastapi, SiKotlin, SiPostgresql, SiSwagger} from "react-icons/si";
+import {SiBackendless, SiFastapi, SiKotlin, SiPostgresql, SiQuarkus, SiSpringboot, SiSwagger} from "react-icons/si";
 import {BiLogoDjango, BiLogoFlutter} from "react-icons/bi";
-import {AiFillMobile, AiOutlineAndroid, AiOutlineApple, AiOutlineDocker, AiOutlineJava, AiOutlinePython} from "react-icons/ai";
+import {AiFillMobile, AiOutlineAndroid, AiOutlineApple, AiOutlineDocker, AiOutlineDotNet, AiOutlineJava, AiOutlinePython} from "react-icons/ai";
 import {GrGraphQl, GrReactjs} from "react-icons/gr";
 import {ReactNode} from "react";
 
@@ -94,6 +94,22 @@ export const technologies = [
     {
         name: "CI/CD",
         icon: <InfinityIcon className="h-10 w-10"/>
+    },
+    {
+        name: "DotNET",
+        icon: <AiOutlineDotNet className="h-10 w-10"/>
+    },
+    {
+        name: "Springboot",
+        icon: <SiSpringboot className="h-10 w-10"/>
+    },
+    {
+        name: "Vertx",
+        icon: <SiBackendless className="h-10 w-10"/>
+    },
+    {
+        name: "Quarkus",
+        icon: <SiQuarkus className="h-10 w-10"/>
     }
 ]
 
