@@ -1,10 +1,30 @@
-import {BarChart, Cloud, Code, Database, GitGraph, Globe, InfinityIcon, Laptop, LineChart, Network, Palette, RadioTower, Server, ServerIcon, Shield} from "lucide-react";
+import {
+    BarChart,
+    Cloud,
+    Code,
+    Database,
+    FlaskConical,
+    GitGraph,
+    Globe,
+    InfinityIcon,
+    Laptop,
+    LineChart,
+    Network,
+    Palette,
+    RadioTower,
+    Server,
+    ServerIcon,
+    Shield
+} from "lucide-react";
 import {DiAws, DiMongodb, DiNodejs, DiSwift} from "react-icons/di";
-import {SiBackendless, SiFastapi, SiKotlin, SiPostgresql, SiQuarkus, SiSpringboot, SiSwagger} from "react-icons/si";
-import {BiLogoDjango, BiLogoFlutter} from "react-icons/bi";
-import {AiFillMobile, AiOutlineAndroid, AiOutlineApple, AiOutlineDocker, AiOutlineDotNet, AiOutlineJava, AiOutlinePython} from "react-icons/ai";
+import {SiBackendless, SiElasticcloud, SiFastapi, SiGrafana, SiKotlin, SiNestjs, SiPostgresql, SiPrometheus, SiQuarkus, SiSpringboot, SiSwagger, SiTravisci} from "react-icons/si";
+import {BiLogoDjango, BiLogoFlask, BiLogoFlutter} from "react-icons/bi";
+import {AiFillMobile, AiOutlineAndroid, AiOutlineApple, AiOutlineDocker, AiOutlineDotNet, AiOutlineJava, AiOutlineKubernetes, AiOutlinePython} from "react-icons/ai";
 import {GrGraphQl, GrReactjs} from "react-icons/gr";
 import {ReactNode} from "react";
+import {RiNextjsLine} from "react-icons/ri";
+import {FaJenkins} from "react-icons/fa6";
+import {CgCircleci} from "react-icons/cg";
 
 export const technologies = [
     {
@@ -17,7 +37,11 @@ export const technologies = [
     },
     {
         name: "Next.js",
-        icon: <Network className="h-10 w-10"/>
+        icon: <RiNextjsLine className="h-10 w-10"/>
+    },
+    {
+        name: "NestJS",
+        icon: <SiNestjs className="h-10 w-10"/>
     },
     {
         name: "Mobile",
@@ -60,6 +84,10 @@ export const technologies = [
         icon: <SiFastapi className="h-10 w-10"/>
     },
     {
+        name: "Flask",
+        icon: <BiLogoFlask className="h-10 w-10"/>
+    },
+    {
         name: "MongoDB",
         icon: <DiMongodb className="h-10 w-10"/>
     },
@@ -74,6 +102,34 @@ export const technologies = [
     {
         name: "Docker",
         icon: <AiOutlineDocker className="h-10 w-10"/>
+    },
+    {
+        name: "Jenkins",
+        icon: <FaJenkins className="h-10 w-10"/>
+    },
+    {
+        name: "Travis",
+        icon: <SiTravisci className="h-10 w-10"/>
+    },
+    {
+        name: "CircleCI",
+        icon: <CgCircleci className="h-10 w-10"/>
+    },
+    {
+        name: "Kubernetes",
+        icon: <AiOutlineKubernetes className="h-10 w-10"/>
+    },
+    {
+        name: "Grafana",
+        icon: <SiGrafana className="h-10 w-10"/>
+    },
+    {
+        name: "Prometheus",
+        icon: <SiPrometheus className="h-10 w-10"/>
+    },
+    {
+        name: "ELK",
+        icon: <SiElasticcloud className="h-10 w-10"/>
     },
     {
         name: "IoT",

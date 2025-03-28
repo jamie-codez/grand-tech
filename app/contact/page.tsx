@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Mail, MapPin, Phone } from "lucide-react"
+import {servicesDetails} from "@/lib/data/services";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -73,17 +74,17 @@ export default function ContactPage() {
               </div>
               <div className="space-y-4">
                 <div className="flex items-start space-x-4">
-                  <MapPin className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="font-bold">Our Office</h3>
-                    <p className="text-muted-foreground">
-                      123 Street, Suite 456
-                      <br />
-                      Nairobi, KE 94103
-                      <br />
-                      Kenya
-                    </p>
-                  </div>
+                  {/*<MapPin className="h-6 w-6 text-primary flex-shrink-0 mt-1" />*/}
+                  {/*<div>*/}
+                  {/*  <h3 className="font-bold">Our Office</h3>*/}
+                  {/*  <p className="text-muted-foreground">*/}
+                  {/*    123 Street, Suite 456*/}
+                  {/*    <br />*/}
+                  {/*    Nairobi, KE 94103*/}
+                  {/*    <br />*/}
+                  {/*    Kenya*/}
+                  {/*  </p>*/}
+                  {/*</div>*/}
                 </div>
                 <div className="flex items-start space-x-4">
                   <Mail className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
@@ -196,12 +197,9 @@ export default function ContactPage() {
                         <SelectValue placeholder="Select a service" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="web-development">Web Development</SelectItem>
-                        <SelectItem value="mobile-development">Mobile Development</SelectItem>
-                        <SelectItem value="custom-software">Custom Software</SelectItem>
-                        <SelectItem value="ui-ux-design">UI/UX Design</SelectItem>
-                        <SelectItem value="cloud-solutions">Cloud Solutions</SelectItem>
-                        <SelectItem value="consulting">IT Consulting</SelectItem>
+                        {servicesDetails.map((servicesDetail,index)=>(
+                            <SelectItem value={servicesDetail.slug} key={index}>{servicesDetail.title}</SelectItem>
+                        ))}
                       </SelectContent>
                     </Select>
                   </div>
