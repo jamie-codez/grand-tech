@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Mail, MapPin, Phone } from "lucide-react"
+import {servicesDetails} from "@/lib/data/services";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -73,17 +74,17 @@ export default function ContactPage() {
               </div>
               <div className="space-y-4">
                 <div className="flex items-start space-x-4">
-                  <MapPin className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="font-bold">Our Office</h3>
-                    <p className="text-muted-foreground">
-                      123 Street, Suite 456
-                      <br />
-                      Nairobi, KE 94103
-                      <br />
-                      Kenya
-                    </p>
-                  </div>
+                  {/*<MapPin className="h-6 w-6 text-primary flex-shrink-0 mt-1" />*/}
+                  {/*<div>*/}
+                  {/*  <h3 className="font-bold">Our Office</h3>*/}
+                  {/*  <p className="text-muted-foreground">*/}
+                  {/*    123 Street, Suite 456*/}
+                  {/*    <br />*/}
+                  {/*    Nairobi, KE 94103*/}
+                  {/*    <br />*/}
+                  {/*    Kenya*/}
+                  {/*  </p>*/}
+                  {/*</div>*/}
                 </div>
                 <div className="flex items-start space-x-4">
                   <Mail className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
@@ -196,12 +197,9 @@ export default function ContactPage() {
                         <SelectValue placeholder="Select a service" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="web-development">Web Development</SelectItem>
-                        <SelectItem value="mobile-development">Mobile Development</SelectItem>
-                        <SelectItem value="custom-software">Custom Software</SelectItem>
-                        <SelectItem value="ui-ux-design">UI/UX Design</SelectItem>
-                        <SelectItem value="cloud-solutions">Cloud Solutions</SelectItem>
-                        <SelectItem value="consulting">IT Consulting</SelectItem>
+                        {servicesDetails.map((servicesDetail,index)=>(
+                            <SelectItem value={servicesDetail.slug} key={index}>{servicesDetail.title}</SelectItem>
+                        ))}
                       </SelectContent>
                     </Select>
                   </div>
@@ -249,26 +247,26 @@ export default function ContactPage() {
       </section>
 
       {/* Map Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-muted">
-        <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Find Us</h2>
-              <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Visit our office or reach out to us online.
-              </p>
-            </div>
-          </div>
-          <div className="mx-auto max-w-5xl py-12">
-            <div className="aspect-[16/9] w-full overflow-hidden rounded-lg bg-muted">
-              {/* Replace with actual map component or iframe */}
-              <div className="h-full w-full flex items-center justify-center">
-                <p className="text-muted-foreground">#TODO: Map placeholder - Embed Google Maps or similar service here (Mapbox or google maps)</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/*<section className="w-full py-12 md:py-24 lg:py-32 bg-muted">*/}
+      {/*  <div className="container px-4 md:px-6">*/}
+      {/*    <div className="flex flex-col items-center justify-center space-y-4 text-center">*/}
+      {/*      <div className="space-y-2">*/}
+      {/*        <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Find Us</h2>*/}
+      {/*        <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">*/}
+      {/*          Visit our office or reach out to us online.*/}
+      {/*        </p>*/}
+      {/*      </div>*/}
+      {/*    </div>*/}
+      {/*    <div className="mx-auto max-w-5xl py-12">*/}
+      {/*      <div className="aspect-[16/9] w-full overflow-hidden rounded-lg bg-muted">*/}
+      {/*        /!* Replace with actual map component or iframe *!/*/}
+      {/*        <div className="h-full w-full flex items-center justify-center">*/}
+      {/*          <p className="text-muted-foreground">#TODO: Map placeholder - Embed Google Maps or similar service here (Mapbox or google maps)</p>*/}
+      {/*        </div>*/}
+      {/*      </div>*/}
+      {/*    </div>*/}
+      {/*  </div>*/}
+      {/*</section>*/}
 
       {/* FAQ Section */}
       <section className="w-full py-12 md:py-24 lg:py-32">

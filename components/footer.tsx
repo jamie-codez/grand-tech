@@ -2,6 +2,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Facebook, Github, Instagram, Linkedin, Twitter } from "lucide-react"
+import {servicesDetails} from "@/lib/data/services";
 
 export default function Footer() {
   return (
@@ -15,23 +16,23 @@ export default function Footer() {
               business growth.
             </p>
             <div className="flex space-x-4">
-              <Link href="#" className="text-muted-foreground hover:text-foreground">
+              <Link href="https://www.instagram.com/grandsoft3/" className="text-muted-foreground hover:text-foreground">
                 <Facebook className="h-5 w-5" />
                 <span className="sr-only">Facebook</span>
               </Link>
-              <Link href="#" className="text-muted-foreground hover:text-foreground">
+              <Link href="https://x.com/grandtech_solns" className="text-muted-foreground hover:text-foreground">
                 <Twitter className="h-5 w-5" />
                 <span className="sr-only">Twitter</span>
               </Link>
-              <Link href="#" className="text-muted-foreground hover:text-foreground">
+              <Link href="https://www.instagram.com/grandsoft3/" className="text-muted-foreground hover:text-foreground">
                 <Instagram className="h-5 w-5" />
                 <span className="sr-only">Instagram</span>
               </Link>
-              <Link href="#" className="text-muted-foreground hover:text-foreground">
+              <Link href="https://www.linkedin.com/company/grandtech-solutions/" className="text-muted-foreground hover:text-foreground">
                 <Linkedin className="h-5 w-5" />
                 <span className="sr-only">LinkedIn</span>
               </Link>
-              <Link href="#" className="text-muted-foreground hover:text-foreground">
+              <Link href="https://github.com/grand-tech" className="text-muted-foreground hover:text-foreground">
                 <Github className="h-5 w-5" />
                 <span className="sr-only">GitHub</span>
               </Link>
@@ -75,36 +76,13 @@ export default function Footer() {
           <div className="space-y-4">
             <h3 className="text-lg font-bold">Services</h3>
             <ul className="space-y-2 text-sm">
-              <li>
-                <Link href="/services/web-development" className="text-muted-foreground hover:text-foreground">
-                  Web Development
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/mobile-development" className="text-muted-foreground hover:text-foreground">
-                  Mobile Development
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/custom-software" className="text-muted-foreground hover:text-foreground">
-                  Custom Software
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/ui-ux-design" className="text-muted-foreground hover:text-foreground">
-                  UI/UX Design
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/cloud-solutions" className="text-muted-foreground hover:text-foreground">
-                  Cloud Solutions
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/consulting" className="text-muted-foreground hover:text-foreground">
-                  IT Consulting
-                </Link>
-              </li>
+              {servicesDetails.map((service,index)=>(
+                  <li>
+                    <Link href={`/services/${service.slug}`} className="text-muted-foreground hover:text-foreground">
+                      {service.title}
+                    </Link>
+                  </li>
+              ))}
             </ul>
           </div>
           <div className="space-y-4">
