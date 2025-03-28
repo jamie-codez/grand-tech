@@ -1,18 +1,21 @@
 export const testimonials = [
     {
-        name: "Alan Wekesa",
-        position: "CEO, NashTech",
-        text: "The team delivered an exceptional solution that exceeded our expectations. Their attention to detail and commitment to quality is impressive.",
+        name: "James O.",
+        position: "CEO, MarketWave",
+        text: "GrandTech Solutions transformed our online presence! Their SEO and social media strategies helped us reach a wider audience, and our website traffic has doubled in just three months. Highly recommended!",
+        image: "/pictures/client1.webp"
     },
     {
-        name: "Kevin Ochieng",
-        position: "CTO, Softech",
-        text: "Working with this team was a pleasure. They were professional, responsive, and delivered a high-quality product on time.",
+        name: "Linda M.",
+        position: "Founder, EcoStyle",
+        text: "Our website went from outdated to outstanding! The team at GrandTech Solutions created a stunning, user-friendly site that truly represents our brand. We've seen an increase in engagement and conversions!",
+        image: "/pictures/client2.webp"
     },
     {
-        name: "Michael Momanyi",
-        position: "Product Manager, Itech",
-        text: "Their expertise and dedication were evident throughout the project. We are thrilled with the results and look forward to future collaborations.",
+        name: "David K.",
+        position: "Product Manager, FitTrack",
+        text: "We needed a seamless, high-performing app, and GrandTech Solutions delivered beyond our expectations. The app runs smoothly on both iOS and Android, and our users love it!",
+        image: "/pictures/client3.webp"
     },
 ]
 
